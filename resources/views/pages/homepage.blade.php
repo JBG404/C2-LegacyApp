@@ -9,9 +9,10 @@
     <h1>
         <x-slot:title>
             {{ __('misc.all_brands') }}
+
         </x-slot:title>
     </h1>
-
+    <p>{{$name}}</p>
 
     <?php
     $size = count($brands);
