@@ -600,7 +600,7 @@ pre code {
 
 .col-md-4 ul
 {
-    background-color: rgb(218, 218, 218);
+    background-color: #e9ecef;
     /* border: solid 2px black; */
     color: rgb(0, 0, 0);
     /* padding: 0px; */
@@ -618,7 +618,7 @@ pre code {
 
 .col-md-4
 {
-    background-color: rgb(218, 218, 218);
+    background-color: #e9ecef;
     border: 2px solid black;
 }
 
@@ -5573,9 +5573,9 @@ a.close.disabled {
     border-bottom-right-radius: calc(0.3rem - 1px);
     border-bottom-left-radius: calc(0.3rem - 1px);
 }
-.modal-footer > * {
+/* .modal-footer > * {
     margin: 0.25rem;
-}
+} */
 
 .modal-scrollbar-measure {
     position: absolute;
@@ -10073,7 +10073,60 @@ a.text-dark:hover, a.text-dark:focus {
 
 
 footer{
-    display:flex;
+
+margin-top: 100px;
 
 }
 
+
+.footer_all
+{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #e9ecef;
+    padding-bottom: 100px;
+}
+
+.copyright
+{
+    background-color: #e9ecef;
+}
+
+.contact_info h2
+{
+    color: black;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact_info a{
+    text-decoration: none;
+    color: black;
+}
+
+.blocks a
+{
+    text-decoration: none;
+    padding-top: 10px;
+    color: black;
+    font-size: 15px;
+
+}
+
+.blocks h2
+{
+    font-weight: bold;
+}
+
+.social h2
+{
+    font-weight: bold;
+    color: black;
+}
+
+.social a
+{
+    text-decoration: none;
+    color: black;
+}
