@@ -595,6 +595,31 @@ pre code {
     padding-right: 15px;
     padding-left: 15px;
     margin: 0 auto;
+
+}
+
+.col-md-4 ul
+{
+    background-color: rgb(218, 218, 218);
+    /* border: solid 2px black; */
+    color: rgb(0, 0, 0);
+    /* padding: 0px; */
+    border-bottom: 2px black solid;
+    padding-bottom: 10px;
+
+}
+
+.col-md-4 ul a{
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid black;
+}
+
+
+
+.col-md-4
+{
+    background-color: rgb(218, 218, 218);
+    border: 2px solid black;
 }
 
 .col {
@@ -4807,6 +4832,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .jumbotron {
+    text-align: center;
     padding: 2rem 1rem;
     margin-bottom: 2rem;
     background-color: #e9ecef;
@@ -4822,6 +4848,22 @@ a.badge-dark:focus, a.badge-dark.focus {
     padding-right: 0;
     padding-left: 0;
     border-radius: 0;
+}
+
+.jumbotron h1
+{
+    font-size: 50px;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
 }
 
 .alert {
@@ -10016,6 +10058,8 @@ a.text-dark:hover, a.text-dark:focus {
     background-color: #e9ecef;
     border-radius: 0.25rem;
 }
+
+
 
 .breadcrumb > li {
     display: inline-block;
