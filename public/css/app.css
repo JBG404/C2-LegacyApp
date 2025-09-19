@@ -4591,6 +4591,25 @@ input[type=button].btn-block {
     border-radius: 0.25rem;
 }
 
+.bread{
+    padding: 30px 30px 30px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.bread a{
+    color: white;
+    background-color: blue;
+    padding: 5px 10px;
+    border-radius: 10%;
+}
+
+.bread a:hover{
+    color: white;
+    background-color: lightblue;
+    text-decoration: none;
+}
+
 .breadcrumb-item + .breadcrumb-item {
     padding-left: 0.5rem;
 }
