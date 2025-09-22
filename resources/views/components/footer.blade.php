@@ -1,8 +1,32 @@
 
 <footer>
-	© {{ __('misc.copyright') }}
+<div class="footer_all">
+    <div class="blocks">
+        <h2>Pagina's</h2>
+        <a href="">Over Ons</a>
+    </div>
+    <div class="contact_info">
+        <h2>Contact gegevens</h2>
+        <a href="#contact_info">T:0900 555 333</a><br>
+        <a href="#contact_info">E: info@clegacyapp.com</a><br>
+    </div>
+
+    <div class="social">
+        <h2>Social</h2>
+        <a href="">Insta: @c2Legacy</a><br>
+        <a href="">Facebook: @c2Legacy_Official</a><br>
+        <a href="">Linkedin: @c2Legacy</a>
 
     </div>
+</div>
+
+<div class="copyright">
+    © {{ __('misc.copyright') }}
+</div>
+
+
+
+
 </footer>
 
 
