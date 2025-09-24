@@ -17,6 +17,8 @@
                 <li><a href="/" title="{{ __('misc.home_alt') }}"
                        alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a></li>
                 {{ $breadcrumb ?? '' }}
+
+                <a href="contact">Contacten</a>
             </ul>
 
             @if ( isset($_GET['q']) )
