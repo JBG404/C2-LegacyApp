@@ -9,6 +9,8 @@
         <h2>Contact gegevens</h2>
         <a href="#contact_info">T:0900 555 333</a><br>
         <a href="#contact_info">E: info@clegacyapp.com</a><br>
+        <a href="contact">Contacten</a>
+
     </div>
 
     <div class="social">
