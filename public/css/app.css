@@ -4584,6 +4584,7 @@ input[type=button].btn-block {
 .breadcrumb {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding: 0.75rem 1rem;
     margin-bottom: 1rem;
     list-style: none;
@@ -10171,4 +10172,72 @@ margin-top: 100px;
     text-decoration: none;
     padding: 10px;
     border-radius: 5px;
+}
+
+/* ===================contact=================== */
+
+
+.contact-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    background-color: grey;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.alert {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.contact_header_nav
+{
+    display: flex;
+    justify-content: center;
+    background-color: #e9ecef;
+    width: 100%;
+
+}
+
+.contact_header_nav a
+{
+    margin-right: 51px;
 }

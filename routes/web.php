@@ -1,30 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-/*
-2017-10-30 setup for urls
-Home:			/
-Brand:			/52/AEG/
-Type:			/52/AEG/53/Superdeluxe/
-Manual:			/52/AEG/53/Superdeluxe/8023/manual/
-				/52/AEG/456/Testhandle/8023/manual/
-
-If we want to add product categories later:
-Productcat:		/category/12/Computers/
-*/
-
 use App\Models\Brand;
 use App\Models\Manual;
 use App\Http\Controllers\RedirectController;
@@ -34,6 +10,30 @@ use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\ContactController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Hier registreer je alle web routes voor je applicatie.
+| Deze routes worden geladen door de RouteServiceProvider en bevatten
+| de "web" middleware group. Maak hier iets moois van!
+|
+*/
+
+/*
+2017-10-30 setup voor urls
+Home:           /
+Brand:          /52/AEG/
+Type:           /52/AEG/53/Superdeluxe/
+Manual:         /52/AEG/53/Superdeluxe/8023/manual/
+                /52/AEG/456/Testhandle/8023/manual/
+
+Als we later productcategorieën willen toevoegen:
+Productcat:     /category/12/Computers/
+*/
 
 // Homepage
 Route::get('/', function () {
@@ -42,12 +42,18 @@ Route::get('/', function () {
     return view('pages.homepage',['name' => 'Jake, Mohamad, Arda'], compact('brands', 'topmanuals'));
 })->name('home', );
 
+// Contact
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+// Redirects for manuals
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 
+// Datafeeds
 Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed']);
 
-// Locale routes
+// Locale switch
 Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale']);
 
 // List of manuals for a brand

@@ -6,4 +6,5 @@
         </a>
         {{ $introduction_text ?? '' }}
     </div>
+
 </div>
