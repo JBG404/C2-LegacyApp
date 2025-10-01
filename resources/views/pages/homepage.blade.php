@@ -19,6 +19,22 @@
     $columns = 3;
     $chunk_size = ceil($size / $columns);
     ?>
+    <h3>Top 10 Manuals</h3>
+    <div class="topmanuals">
+
+            @foreach ($topmanuals as $topmanual)
+                <?php
+                $brand = $brands->firstwhere('id', $topmanual->brand_id);
+                ?>
+                @if ($topmanual->brand_id == $brand->id)
+                    <a href="{{ route('manual.show', ['brand_id'   => $topmanual->brand_id,'brand_slug' => $brand->name,'manual_id'  => $topmanual->id]) }}"alt="{{ $topmanual->name }}"title="{{ $topmanual->name }}"class="knop">Brand: {{$brand->name}}<br/>Type:
+                        {{ $topmanual->name }}</a>
+                <br />
+                @endif
+            @endforeach
+    </div>
+
+
 
     <div class="container">
         <!-- Example row of columns -->

@@ -26,6 +26,7 @@ Productcat:		/category/12/Computers/
 */
 
 use App\Models\Brand;
+use App\Models\Manual;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\TypeController;
@@ -37,7 +38,8 @@ use App\Http\Controllers\LocaleController;
 // Homepage
 Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
-    return view('pages.homepage',['name' => 'Jake   '], compact('brands'));
+    $topmanuals = Manual::orderByDesc('counter')->take(10)->get();
+    return view('pages.homepage',['name' => 'Jake, Mohamad, Arda'], compact('brands', 'topmanuals'));
 })->name('home', );
 
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
@@ -52,7 +54,8 @@ Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale
 Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
 
 // Detail page for a manual
-Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 'show']);
+Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 'show'])
+->name('manual.show');
 
 // Generate sitemaps
 Route::get('/generateSitemap/', [SitemapController::class, 'generate']);

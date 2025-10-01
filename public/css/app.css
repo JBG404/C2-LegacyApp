@@ -10149,3 +10149,26 @@ margin-top: 100px;
     text-decoration: none;
     color: black;
 }
+
+.topmanuals{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 20px 0px;
+}
+
+.topmanuals .knop{
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.topmanuals .knop:hover{
+    background-color: lightblue;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
