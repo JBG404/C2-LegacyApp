@@ -18,5 +18,7 @@ return [
 'homepage_line_3' => "Find your manual quickly by choosing your brand below.",
 'type_list' => "Below are all the different types of :brand. Select the device of your choice, to download the manual or user guide.",
 'manual_list' => "Here you can find your manual(s) and user guide(s) for the :brand :type. Click on the links below to view or download your manual.",
-
+'top10'=> "Top 10 manuals",
+'top5'=> "Top 5 manuals",
+'al'=>"Al manuals",
 ];

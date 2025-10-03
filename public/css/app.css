@@ -10241,3 +10241,8 @@ button:hover {
 {
     margin-right: 51px;
 }
+
+.form-inline
+{
+    margin-right: 100px;
+}

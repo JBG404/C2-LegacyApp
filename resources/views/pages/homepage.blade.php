@@ -19,7 +19,7 @@
     $columns = 3;
     $chunk_size = ceil($size / $columns);
     ?>
-    <h3>Top 10 Manuals</h3>
+    <h3>{{__('introduction_texts.top10')}}</h3>
     <div class="topmanuals">
 
             @foreach ($topmanuals as $topmanual)

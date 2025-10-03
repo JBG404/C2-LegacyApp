@@ -12,8 +12,8 @@
     <h1>{{ $brand->name }}</h1>
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
-    
-<h4>Top 5 handleidingen</h4>
+
+<h4>{{__('introduction_texts.top5')}}</h4>
     <div class="bread">
 
         @foreach ($topmanuals as $topmanual)
@@ -24,7 +24,7 @@
                 @endif
             @endforeach
     </div>
-<h4>Alle handleidingen</h4>
+<h4>{{__('introduction_texts.al')}}</h4>
     <div class="bread">
 
         @foreach ($manuals as $manual)
