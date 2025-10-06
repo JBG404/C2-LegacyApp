@@ -19,6 +19,19 @@
     $columns = 3;
     $chunk_size = ceil($size / $columns);
     ?>
+    <?php
+    // Simple A-Z filter using query parameter ?letter=A
+    $selectedLetter = strtoupper(request('letter', ''));
+    if ($selectedLetter && preg_match('/^[A-Z]$/', $selectedLetter)) {
+        $brands = $brands->filter(function($brand) use ($selectedLetter) {
+            return strtoupper(substr($brand->name, 0, 1)) === $selectedLetter;
+        })->values();
+
+        // Recompute layout metrics after filtering
+        $size = count($brands);
+        $chunk_size = max(1, ceil($size / $columns));
+    }
+    ?>
     <h3>{{__('introduction_texts.top10')}}</h3>
     <div class="topmanuals">
 
@@ -26,7 +39,7 @@
                 <?php
                 $brand = $brands->firstwhere('id', $topmanual->brand_id);
                 ?>
-                @if ($topmanual->brand_id == $brand->id)
+                @if ($brand)
                     <a href="{{ route('manual.show', ['brand_id'   => $topmanual->brand_id,'brand_slug' => $brand->name,'manual_id'  => $topmanual->id]) }}"alt="{{ $topmanual->name }}"title="{{ $topmanual->name }}"class="knop">Brand: {{$brand->name}}<br/>Type:
                         {{ $topmanual->name }}</a>
                 <br />
@@ -38,6 +51,16 @@
 
     <div class="container">
         <!-- Example row of columns -->
+        <div class="a-z">
+            <p>Filter op letter:
+                <a href="{{ url()->current() }}" @if(!$selectedLetter) style="font-weight:bold" @endif>Alle</a> -
+                @foreach (range('A','Z') as $L)
+                    <a href="{{ request()->fullUrlWithQuery(['letter' => $L]) }}" @if($selectedLetter === $L) style="font-weight:bold" @endif>{{ $L }}</a>@if($L !== 'Z')-@endif
+                @endforeach
+            </p>
+        </div>
+
+
         <div class="row">
 
             @foreach($brands->chunk($chunk_size) as $chunk)
